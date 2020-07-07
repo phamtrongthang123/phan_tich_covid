@@ -1,0 +1,25 @@
+Load data lên 
+```{r}
+covid_data = read.csv(file="owid-covid-data-0707.csv")
+```
+
+Xem qua bộ column thấy có khoảng 34 columns.  
+```{r}
+colnames(covid_data)
+```
+
+Có các cặp total và new đi chung trong các bộ: cases, death, cases per mil, death per mil, test, test per thousand, test smoothed.
+
+Chưa rõ ý của test smoothed là như thế nào. Và tại sao lại số test dựa trên thousand thay vì mil như cases và death.
+
+> Về việc mil và thousand, do 2 cột đó được 2 cơ sở khác nhau report về nên khác. 
+
+> Về smoothed, theo codebook (xem để biết thêm chi tiết) thì nó average 7 ngày liên tục (nếu nước đó cung cấp đủ data cả 7 ngày) rồi plot đều lên. 
+À không hiểu sai rồi, a[i] = sum(aj, j = i-7 .. i) / 7, thế này mới đúng theo bảng data. 
+Với công thức thế này thì sẽ gặp dòng bị thiếu, lúc này theo codebook kêu là coi như daily basis đổi như nhau, mình cũng không chắc ý của nó lắm, có thể ý là a[i] = a[i-1], nhưng mà mình check US data thấy mấy chỗ NA là nó coi không có luôn, nên không rõ ý. 
+
+
+
+
+
+
