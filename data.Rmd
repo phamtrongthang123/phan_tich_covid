@@ -1,3 +1,4 @@
+# Load data
 Load data lên 
 ```{r}
 covid_data = read.csv(file="owid-covid-data-0707.csv")
@@ -10,13 +11,64 @@ colnames(covid_data)
 
 Có các cặp total và new đi chung trong các bộ: cases, death, cases per mil, death per mil, test, test per thousand, test smoothed.
 
-Chưa rõ ý của test smoothed là như thế nào. Và tại sao lại số test dựa trên thousand thay vì mil như cases và death.
+Chưa rõ ý của test smoothed là như thế nào. Và tại sao lại số test dựa trên thousand th$ay vì mil như cases và death.
 
 > Về việc mil và thousand, do 2 cột đó được 2 cơ sở khác nhau report về nên khác. 
 
 > Về smoothed, theo codebook (xem để biết thêm chi tiết) thì nó average 7 ngày liên tục (nếu nước đó cung cấp đủ data cả 7 ngày) rồi plot đều lên. 
 À không hiểu sai rồi, a[i] = sum(aj, j = i-7 .. i) / 7, thế này mới đúng theo bảng data. 
 Với công thức thế này thì sẽ gặp dòng bị thiếu, lúc này theo codebook kêu là coi như daily basis đổi như nhau, mình cũng không chắc ý của nó lắm, có thể ý là a[i] = a[i-1], nhưng mà mình check US data thấy mấy chỗ NA là nó coi không có luôn, nên không rõ ý. 
+
+Từ bảng table còn thấy mỗi row tương ứng mỗi ngày, tức là cập nhật hàng ngày. Theo github thì data update khoảng 4-5PM hàng ngày. Tuy nhiên thì điều này không quan trọng lắm.
+
+## codebook
+
+Cột điểm phản ứng (`stringency_index`), điểm này dựa trên tiêu chí school closures, workplace closures, and travel ban và được chấm điểm thang 100. Cái này có thể đại diện cho policy của quốc gia tại ngày tương ứng. Ngoài ra còn vài cột khác cũng thể hiện policy là `handwashing_facilities`, liên quan số `tests`. Có cột `hospital_beds_per_thousand` có thể đại diện 1 phần policy, nhưng mà check US và VNM đều cho thấy nó là hằng số. 
+
+```{r}
+covid_data[covid_data$iso_code == "VNM",][1:3,]$hospital_beds_per_thousand
+covid_data[covid_data$iso_code == "USA",][1:3,]$hospital_beds_per_thousand
+```
+
+
+Kiểm tra xem nước nào cho số giường nhiều nhất: 
+```{r}
+subset(covid_data, hospital_beds_per_thousand == max(covid_data$hospital_beds_per_thousand,na.rm = TRUE))$location[1]
+```
+
+## Plot 
+
+Dĩ nhiên x là date. y chưa biết (Plot khó quá :<)
+
+```{r}
+library(plotly)
+US_covid_data_plot = US_covid_data
+US_covid_data_plot$date = as.Date(US_covid_data_plot$date)
+ggplot(US_covid_data_plot, aes(x=date, y = new_cases)) +
+  geom_line(color = "RED", size=1.3) + scale_x_date(breaks = scales::breaks_pretty(10))
+```
+
+Có sẵn mớ plot trên OWID rồi, nên chắc không cần plotly làm gì ở đây. Thôi lấy luôn owid.
+
+## Explore
+
+Đọc các note riêng chi tiết nhé.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
