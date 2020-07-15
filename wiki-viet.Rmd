@@ -1,0 +1,181 @@
+---
+title: "wiki viet"
+output: html_document
+---
+
+```{r}
+
+covid_data = read.csv("wiki-viet-1307.csv",encoding="UTF-8")
+head(covid_data)
+```
+
+
+
+```{r}
+library(ggplot2)
+covid_data_plot = covid_data
+covid_data_plot$Thoi.gian = as.Date(covid_data_plot$Thoi.gian, format='%d/%m')
+ggplot(covid_data_plot, aes(x=Thoi.gian, y = Tuoi)) +
+  geom_line(color = "RED", size=1.3) + scale_x_date(breaks = scales::breaks_pretty(10))
+
+
+```
+
+```{r}
+thoi_gian = unique(covid_data_plot$Thoi.gian)
+nhom_tuoi = c('<1', '01-4', '05-14', '15-24', '25-34', '35-44', '45-54', '55-64', '65-74', '75-84', '85+') 
+
+make_std_df = function(thoi_gian, nhom_tuoi) {
+  new_thoi_gian = rep(thoi_gian, each = length(nhom_tuoi))
+  new_age_group = rep (nhom_tuoi, length(thoi_gian))
+  init_value = rep(0, length(new_age_group))
+  return(data.frame(new_thoi_gian, new_age_group, init_value))
+}
+
+combined_age_group = make_std_df(thoi_gian, nhom_tuoi)
+
+```
+
+Vì đọc ra factor nên phải đổi <1 và 3 tháng tuổi thành 0.
+
+```{r}
+group_of_age = function(age) {
+  
+  if (age  == "3 tháng tuổi") {
+    return('<1')
+  }
+  age = as.numeric(as.character(age))
+  if (age >= 1 & age <= 4) {
+    return('01-4')
+  }
+  if (age >= 5 & age <= 14) {
+    return('05-14')
+  }
+  if (age >= 15 & age <= 24) {
+    return('15-24')
+  }
+  if (age >= 25 & age <= 34) {
+    return('25-34')
+  }
+  if (age >= 35 & age <= 44) {
+    return('35-44')
+  }
+  if (age >= 45 & age <= 54) {
+    return('45-54')
+  }
+  if (age >= 55 & age <= 64) {
+    return('55-64')
+  }
+  if (age >= 65 & age <= 74) {
+    return('65-74')
+  }
+  if (age >= 75 & age <= 84) {
+    return('75-84')
+  }
+  if (age >= 85) {
+    return('85+')
+  }
+  return('<1')
+}
+```
+
+
+```{r}
+
+count_age1 = function(thoi_gian,tuoi) {
+  # apply for covid_data_plot
+  age_g = group_of_age(tuoi)
+  combined_age_group[combined_age_group$new_thoi_gian == thoi_gian & combined_age_group$new_age_group == age_g,3] <<- combined_age_group[combined_age_group$new_thoi_gian == thoi_gian & combined_age_group$new_age_group == age_g,3] + 1
+}
+for (i in 1:nrow(covid_data_plot)) {
+  
+  thoi_gian = covid_data_plot[i, 2]
+  tuoi = covid_data_plot[i,3]
+  count_age1(thoi_gian, tuoi)
+}
+
+```
+
+
+```{r}
+ggplot(data=combined_age_group, aes(x=new_thoi_gian, y=init_value, group=new_age_group, color=new_age_group)) + geom_line(size=1)
+```
+
+```{r}
+ggplot(data=combined_age_group, aes(x=new_thoi_gian, y=init_value, group=new_age_group, color=new_age_group)) + geom_smooth()
+```
+
+Hình xấu quá nên cumsum vậy :(
+```{r}
+combined_age_csum = combined_age_group
+combined_age_csum$csum = ave(combined_age_csum$init_value, combined_age_csum$new_age_group, FUN=cumsum)
+```
+
+```{r}
+
+ggplot(data=combined_age_csum, aes(x=new_thoi_gian, y=csum, group=new_age_group, color=new_age_group)) + geom_line(size=1)
+ggplot(combined_age_csum, aes(x = new_thoi_gian, y = init_value, fill = new_age_group)) + geom_area(colour="black", size=0.2, alpha=.4)
+ggplot(combined_age_csum, aes(x = new_thoi_gian, y = csum, fill = new_age_group)) + geom_area(colour="black", size=0.2, alpha=.4)
+```
+
+Cái cuối tốt nhất nhỉ
+```{r}
+library(plotly)
+
+ggplot(combined_age_csum, aes(x = new_thoi_gian, y = csum, fill = new_age_group)) + geom_area(colour="black", size=0.2, alpha=.4)
+ggplotly()
+```
+
+Dễ thấy độ tuổi từ 15 - 44 là chiếm nhiều nhất. Không có dữ liệu số người chết nên không kết luận được ai dễ chết. Chỉ đủ kết luận tuổi trẻ là mắc nhiều nhất ở VN. 
+Khác với dữ liệu Mỹ (https://www.cdc.gov/nchs/nvss/vsrr/covid_weekly/index.htm) khi số chết thì càng già càng dễ chết. Nhưng Mỹ không cấp số case theo tuổi nên cũng không so được.
+
+Giờ đi xét theo giới tính
+```{r}
+require(dplyr)
+combined_sex = covid_data_plot %>% count(Thoi.gian, Gioi.tinh)
+combined_sex_csum = combined_sex
+combined_sex_csum$csum = ave(combined_sex_csum$n, combined_sex_csum$Gioi.tinh, FUN=cumsum)
+```
+
+```{r}
+ggplot(data=combined_sex_csum, aes(x=Thoi.gian, y=csum, group=Gioi.tinh, color=Gioi.tinh)) + geom_line(size=1)
+ggplot(combined_sex_csum, aes(x = Thoi.gian, y = csum, fill = Gioi.tinh)) + geom_area(colour="black", size=0.2, alpha=.4)
+
+```
+
+Theo giới tính thì độ lây nhiễm khá đều nhau. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

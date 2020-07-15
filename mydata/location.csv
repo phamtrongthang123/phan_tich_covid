@@ -1,0 +1,214 @@
+"UID","iso2","iso3","code3","FIPS","Admin2","Province_State","Country_Region","Lat","Long_","Combined_Key","Population"
+4,"AF","AFG",4,NA,"","","Afghanistan",33.93911,67.709953,"Afghanistan",38928341
+8,"AL","ALB",8,NA,"","","Albania",41.1533,20.1683,"Albania",2877800
+12,"DZ","DZA",12,NA,"","","Algeria",28.0339,1.6596,"Algeria",43851043
+20,"AD","AND",20,NA,"","","Andorra",42.5063,1.5218,"Andorra",77265
+24,"AO","AGO",24,NA,"","","Angola",-11.2027,17.8739,"Angola",32866268
+28,"AG","ATG",28,NA,"","","Antigua and Barbuda",17.0608,-61.7964,"Antigua and Barbuda",97928
+31,"AZ","AZE",31,NA,"","","Azerbaijan",40.1431,47.5769,"Azerbaijan",10139175
+32,"AR","ARG",32,NA,"","","Argentina",-38.4161,-63.6167,"Argentina",45195777
+36,"AU","AUS",36,NA,"","","Australia",-25,133,"Australia",25459700
+40,"AT","AUT",40,NA,"","","Austria",47.5162,14.5501,"Austria",9006400
+44,"BS","BHS",44,NA,"","","Bahamas",25.025885,-78.035889,"Bahamas",393248
+48,"BH","BHR",48,NA,"","","Bahrain",26.0275,50.55,"Bahrain",1701583
+50,"BD","BGD",50,NA,"","","Bangladesh",23.685,90.3563,"Bangladesh",164689383
+51,"AM","ARM",51,NA,"","","Armenia",40.0691,45.0382,"Armenia",2963234
+52,"BB","BRB",52,NA,"","","Barbados",13.1939,-59.5432,"Barbados",287371
+56,"BE","BEL",56,NA,"","","Belgium",50.8333,4.469936,"Belgium",11589616
+60,"BM","BMU",60,NA,"","Bermuda","United Kingdom",32.3078,-64.7505,"Bermuda, United Kingdom",62273
+64,"BT","BTN",64,NA,"","","Bhutan",27.5142,90.4336,"Bhutan",771612
+68,"BO","BOL",68,NA,"","","Bolivia",-16.2902,-63.5887,"Bolivia",11673029
+70,"BA","BIH",70,NA,"","","Bosnia and Herzegovina",43.9159,17.6791,"Bosnia and Herzegovina",3280815
+72,"BW","BWA",72,NA,"","","Botswana",-22.3285,24.6849,"Botswana",2351625
+76,"BR","BRA",76,NA,"","","Brazil",-14.235,-51.9253,"Brazil",212559409
+84,"BZ","BLZ",84,NA,"","","Belize",17.1899,-88.4976,"Belize",397621
+92,"VG","VGB",92,NA,"","British Virgin Islands","United Kingdom",18.4207,-64.64,"British Virgin Islands, United Kingdom",30237
+96,"BN","BRN",96,NA,"","","Brunei",4.5353,114.7277,"Brunei",437483
+100,"BG","BGR",100,NA,"","","Bulgaria",42.7339,25.4858,"Bulgaria",6948445
+104,"MM","MMR",104,NA,"","","Burma",21.9162,95.956,"Burma",54409794
+108,"BI","BDI",108,NA,"","","Burundi",-3.3731,29.9189,"Burundi",11890781
+112,"BY","BLR",112,NA,"","","Belarus",53.7098,27.9534,"Belarus",9449321
+116,"KH","KHM",116,NA,"","","Cambodia",11.55,104.9167,"Cambodia",16718971
+120,"CM","CMR",120,NA,"","","Cameroon",3.848,11.5021,"Cameroon",26545864
+124,"CA","CAN",124,NA,"","","Canada",60,-95,"Canada",37855702
+132,"CV","CPV",132,NA,"","","Cabo Verde",16.5388,-23.0418,"Cabo Verde",555988
+136,"KY","CYM",136,NA,"","Cayman Islands","United Kingdom",19.3133,-81.2546,"Cayman Islands, United Kingdom",65720
+140,"CF","CAF",140,NA,"","","Central African Republic",6.6111,20.9394,"Central African Republic",4829764
+144,"LK","LKA",144,NA,"","","Sri Lanka",7.873054,80.771797,"Sri Lanka",21413250
+148,"TD","TCD",148,NA,"","","Chad",15.4542,18.7322,"Chad",16425859
+152,"CL","CHL",152,NA,"","","Chile",-35.6751,-71.543,"Chile",19116209
+156,"CN","CHN",156,NA,"","","China",30.5928,114.3055,"China",1404676330
+158,"TW","TWN",158,NA,"","","Taiwan*",23.7,121,"Taiwan*",23816775
+170,"CO","COL",170,NA,"","","Colombia",4.5709,-74.2973,"Colombia",50882884
+174,"KM","COM",174,NA,"","","Comoros",-11.6455,43.3333,"Comoros",869595
+175,"YT","MYT",175,NA,"","Mayotte","France",-12.8275,45.166244,"Mayotte, France",272813
+178,"CG","COG",178,NA,"","","Congo (Brazzaville)",-0.228,15.8277,"Congo (Brazzaville)",5518092
+180,"CD","COD",180,NA,"","","Congo (Kinshasa)",-4.0383,21.7587,"Congo (Kinshasa)",89561404
+188,"CR","CRI",188,NA,"","","Costa Rica",9.7489,-83.7534,"Costa Rica",5094114
+191,"HR","HRV",191,NA,"","","Croatia",45.1,15.2,"Croatia",4105268
+192,"CU","CUB",192,NA,"","","Cuba",21.521757,-77.781167,"Cuba",11326616
+196,"CY","CYP",196,NA,"","","Cyprus",35.1264,33.4299,"Cyprus",1207361
+203,"CZ","CZE",203,NA,"","","Czechia",49.8175,15.473,"Czechia",10708982
+204,"BJ","BEN",204,NA,"","","Benin",9.3077,2.3158,"Benin",12123198
+208,"DK","DNK",208,NA,"","","Denmark",56.2639,9.5018,"Denmark",5792203
+212,"DM","DMA",212,NA,"","","Dominica",15.415,-61.371,"Dominica",71991
+214,"DO","DOM",214,NA,"","","Dominican Republic",18.7357,-70.1627,"Dominican Republic",10847904
+218,"EC","ECU",218,NA,"","","Ecuador",-1.8312,-78.1834,"Ecuador",17643060
+222,"SV","SLV",222,NA,"","","El Salvador",13.7942,-88.8965,"El Salvador",6486201
+226,"GQ","GNQ",226,NA,"","","Equatorial Guinea",1.6508,10.2679,"Equatorial Guinea",1402985
+231,"ET","ETH",231,NA,"","","Ethiopia",9.145,40.4897,"Ethiopia",114963583
+232,"ER","ERI",232,NA,"","","Eritrea",15.1794,39.7823,"Eritrea",3546427
+233,"EE","EST",233,NA,"","","Estonia",58.5953,25.0136,"Estonia",1326539
+234,"FO","FRO",234,NA,"","Faroe Islands","Denmark",61.8926,-6.9118,"Faroe Islands, Denmark",48865
+238,"FK","FLK",238,NA,"","Falkland Islands (Malvinas)","United Kingdom",-51.7963,-59.5236,"Falkland Islands (Malvinas), United Kingdom",3483
+242,"FJ","FJI",242,NA,"","","Fiji",-17.7134,178.065,"Fiji",896444
+246,"FI","FIN",246,NA,"","","Finland",61.92411,25.748151,"Finland",5540718
+250,"FR","FRA",250,NA,"","","France",46.2276,2.2137,"France",65273512
+254,"GF","GUF",254,NA,"","French Guiana","France",4,-53,"French Guiana, France",298682
+258,"PF","PYF",258,NA,"","French Polynesia","France",-17.6797,149.4068,"French Polynesia, France",280904
+262,"DJ","DJI",262,NA,"","","Djibouti",11.8251,42.5903,"Djibouti",988002
+266,"GA","GAB",266,NA,"","","Gabon",-0.8037,11.6094,"Gabon",2225728
+268,"GE","GEO",268,NA,"","","Georgia",42.3154,43.3569,"Georgia",3989175
+270,"GM","GMB",270,NA,"","","Gambia",13.4432,-15.3101,"Gambia",2416664
+275,"PS","PSE",275,NA,"","","West Bank and Gaza",31.9522,35.2332,"West Bank and Gaza",5101416
+276,"DE","DEU",276,NA,"","","Germany",51.165691,10.451526,"Germany",83783945
+288,"GH","GHA",288,NA,"","","Ghana",7.9465,-1.0232,"Ghana",31072945
+292,"GI","GIB",292,NA,"","Gibraltar","United Kingdom",36.1408,-5.3536,"Gibraltar, United Kingdom",33691
+300,"GR","GRC",300,NA,"","","Greece",39.0742,21.8243,"Greece",10423056
+304,"GL","GRL",304,NA,"","Greenland","Denmark",71.7069,-42.6043,"Greenland, Denmark",56772
+308,"GD","GRD",308,NA,"","","Grenada",12.1165,-61.679,"Grenada",112519
+312,"GP","GLP",312,NA,"","Guadeloupe","France",16.265,-61.551,"Guadeloupe, France",400127
+320,"GT","GTM",320,NA,"","","Guatemala",15.7835,-90.2308,"Guatemala",17915567
+324,"GN","GIN",324,NA,"","","Guinea",9.9456,-9.6966,"Guinea",13132792
+328,"GY","GUY",328,NA,"","","Guyana",4.860416,-58.93018,"Guyana",786559
+332,"HT","HTI",332,NA,"","","Haiti",18.9712,-72.2852,"Haiti",11402533
+336,"VA","VAT",336,NA,"","","Holy See",41.9029,12.4534,"Holy See",809
+340,"HN","HND",340,NA,"","","Honduras",15.2,-86.2419,"Honduras",9904608
+348,"HU","HUN",348,NA,"","","Hungary",47.1625,19.5033,"Hungary",9660350
+352,"IS","ISL",352,NA,"","","Iceland",64.9631,-19.0208,"Iceland",341250
+356,"IN","IND",356,NA,"","","India",20.593684,78.96288,"India",1380004385
+360,"ID","IDN",360,NA,"","","Indonesia",-0.7893,113.9213,"Indonesia",273523621
+364,"IR","IRN",364,NA,"","","Iran",32.427908,53.688046,"Iran",83992953
+368,"IQ","IRQ",368,NA,"","","Iraq",33.223191,43.679291,"Iraq",40222503
+372,"IE","IRL",372,NA,"","","Ireland",53.1424,-7.6921,"Ireland",4937796
+376,"IL","ISR",376,NA,"","","Israel",31.046051,34.851612,"Israel",8655541
+380,"IT","ITA",380,NA,"","","Italy",41.87194,12.56738,"Italy",60461828
+383,"XK","XKS",383,NA,"","","Kosovo",42.602636,20.902977,"Kosovo",1810366
+384,"CI","CIV",384,NA,"","","Cote d'Ivoire",7.54,-5.5471,"Cote d'Ivoire",26378275
+388,"JM","JAM",388,NA,"","","Jamaica",18.1096,-77.2975,"Jamaica",2961161
+392,"JP","JPN",392,NA,"","","Japan",36.204824,138.252924,"Japan",126476458
+398,"KZ","KAZ",398,NA,"","","Kazakhstan",48.0196,66.9237,"Kazakhstan",18776707
+400,"JO","JOR",400,NA,"","","Jordan",31.24,36.51,"Jordan",10203140
+404,"KE","KEN",404,NA,"","","Kenya",-0.0236,37.9062,"Kenya",53771300
+410,"KR","KOR",410,NA,"","","Korea, South",35.907757,127.766922,"Korea, South",51269183
+414,"KW","KWT",414,NA,"","","Kuwait",29.31166,47.481766,"Kuwait",4270563
+417,"KG","KGZ",417,NA,"","","Kyrgyzstan",41.20438,74.766098,"Kyrgyzstan",6524191
+418,"LA","LAO",418,NA,"","","Laos",19.85627,102.495496,"Laos",7275556
+422,"LB","LBN",422,NA,"","","Lebanon",33.8547,35.8623,"Lebanon",6825442
+426,"LS","LSO",426,NA,"","","Lesotho",-29.61,28.2336,"Lesotho",2142252
+428,"LV","LVA",428,NA,"","","Latvia",56.8796,24.6032,"Latvia",1886202
+430,"LR","LBR",430,NA,"","","Liberia",6.428055,-9.429499,"Liberia",5057677
+434,"LY","LBY",434,NA,"","","Libya",26.3351,17.228331,"Libya",6871287
+438,"LI","LIE",438,NA,"","","Liechtenstein",47.14,9.55,"Liechtenstein",38137
+440,"LT","LTU",440,NA,"","","Lithuania",55.1694,23.8813,"Lithuania",2722291
+442,"LU","LUX",442,NA,"","","Luxembourg",49.8153,6.1296,"Luxembourg",625976
+450,"MG","MDG",450,NA,"","","Madagascar",-18.766947,46.869107,"Madagascar",27691019
+454,"MW","MWI",454,NA,"","","Malawi",-13.2543,34.3015,"Malawi",19129955
+458,"MY","MYS",458,NA,"","","Malaysia",4.210484,101.975766,"Malaysia",32365998
+462,"MV","MDV",462,NA,"","","Maldives",3.2028,73.2207,"Maldives",540542
+466,"ML","MLI",466,NA,"","","Mali",17.570692,-3.996166,"Mali",20250834
+470,"MT","MLT",470,NA,"","","Malta",35.9375,14.3754,"Malta",441539
+474,"MQ","MTQ",474,NA,"","Martinique","France",14.6415,-61.0242,"Martinique, France",375265
+478,"MR","MRT",478,NA,"","","Mauritania",21.0079,-10.9408,"Mauritania",4649660
+480,"MU","MUS",480,NA,"","","Mauritius",-20.348404,57.552152,"Mauritius",1271767
+484,"MX","MEX",484,NA,"","","Mexico",23.6345,-102.5528,"Mexico",127792286
+492,"MC","MCO",492,NA,"","","Monaco",43.7333,7.4167,"Monaco",39244
+496,"MN","MNG",496,NA,"","","Mongolia",46.8625,103.8467,"Mongolia",3278292
+498,"MD","MDA",498,NA,"","","Moldova",47.4116,28.3699,"Moldova",4033963
+499,"ME","MNE",499,NA,"","","Montenegro",42.708678,19.37439,"Montenegro",628062
+500,"MS","MSR",500,NA,"","Montserrat","United Kingdom",16.742498,-62.187366,"Montserrat, United Kingdom",4999
+504,"MA","MAR",504,NA,"","","Morocco",31.7917,-7.0926,"Morocco",36910558
+508,"MZ","MOZ",508,NA,"","","Mozambique",-18.665695,35.529562,"Mozambique",31255435
+512,"OM","OMN",512,NA,"","","Oman",21.512583,55.923255,"Oman",5106622
+516,NA,"NAM",516,NA,"","","Namibia",-22.9576,18.4904,"Namibia",2540916
+524,"NP","NPL",524,NA,"","","Nepal",28.1667,84.25,"Nepal",29136808
+528,"NL","NLD",528,NA,"","","Netherlands",52.1326,5.2913,"Netherlands",17134873
+531,"CW","CUW",531,NA,"","Curacao","Netherlands",12.1696,-68.99,"Curacao, Netherlands",164100
+533,"AW","ABW",533,NA,"","Aruba","Netherlands",12.5211,-69.9683,"Aruba, Netherlands",106766
+534,"SX","SXM",534,NA,"","Sint Maarten","Netherlands",18.0425,-63.0548,"Sint Maarten, Netherlands",42882
+535,"BQ","BES",535,NA,"","Bonaire, Sint Eustatius and Saba","Netherlands",12.1784,-68.2385,"Bonaire, Sint Eustatius and Saba, Netherlands",26221
+540,"NC","NCL",540,NA,"","New Caledonia","France",-20.904305,165.618042,"New Caledonia, France",285491
+554,"NZ","NZL",554,NA,"","","New Zealand",-40.9006,174.886,"New Zealand",4822233
+558,"NI","NIC",558,NA,"","","Nicaragua",12.865416,-85.207229,"Nicaragua",6624554
+562,"NE","NER",562,NA,"","","Niger",17.607789,8.081666,"Niger",24206636
+566,"NG","NGA",566,NA,"","","Nigeria",9.082,8.6753,"Nigeria",206139587
+578,"NO","NOR",578,NA,"","","Norway",60.472,8.4689,"Norway",5421242
+586,"PK","PAK",586,NA,"","","Pakistan",30.3753,69.3451,"Pakistan",220892331
+591,"PA","PAN",591,NA,"","","Panama",8.538,-80.7821,"Panama",4314768
+598,"PG","PNG",598,NA,"","","Papua New Guinea",-6.314993,143.95555,"Papua New Guinea",8947027
+600,"PY","PRY",600,NA,"","","Paraguay",-23.4425,-58.4438,"Paraguay",7132530
+604,"PE","PER",604,NA,"","","Peru",-9.19,-75.0152,"Peru",32971846
+608,"PH","PHL",608,NA,"","","Philippines",12.879721,121.774017,"Philippines",109581085
+616,"PL","POL",616,NA,"","","Poland",51.9194,19.1451,"Poland",37846605
+620,"PT","PRT",620,NA,"","","Portugal",39.3999,-8.2245,"Portugal",10196707
+624,"GW","GNB",624,NA,"","","Guinea-Bissau",11.8037,-15.1804,"Guinea-Bissau",1967998
+626,"TL","TLS",626,NA,"","","Timor-Leste",-8.874217,125.727539,"Timor-Leste",1318442
+634,"QA","QAT",634,NA,"","","Qatar",25.3548,51.1839,"Qatar",2881060
+638,"RE","REU",638,NA,"","Reunion","France",-21.1151,55.5364,"Reunion, France",895308
+642,"RO","ROU",642,NA,"","","Romania",45.9432,24.9668,"Romania",19237682
+643,"RU","RUS",643,NA,"","","Russia",61.52401,105.318756,"Russia",145934460
+646,"RW","RWA",646,NA,"","","Rwanda",-1.9403,29.8739,"Rwanda",12952209
+652,"BL","BLM",652,NA,"","Saint Barthelemy","France",17.9,-62.8333,"Saint Barthelemy, France",9885
+659,"KN","KNA",659,NA,"","","Saint Kitts and Nevis",17.357822,-62.782998,"Saint Kitts and Nevis",53192
+660,"AI","AIA",660,NA,"","Anguilla","United Kingdom",18.2206,-63.0686,"Anguilla, United Kingdom",15002
+662,"LC","LCA",662,NA,"","","Saint Lucia",13.9094,-60.9789,"Saint Lucia",183629
+663,"MF","MAF",663,NA,"","St Martin","France",18.0708,-63.0501,"St Martin, France",38659
+666,"PM","SPM",666,NA,"","Saint Pierre and Miquelon","France",46.8852,-56.3159,"Saint Pierre and Miquelon, France",5795
+670,"VC","VCT",670,NA,"","","Saint Vincent and the Grenadines",12.9843,-61.2872,"Saint Vincent and the Grenadines",110947
+674,"SM","SMR",674,NA,"","","San Marino",43.9424,12.4578,"San Marino",33938
+678,"ST","STP",678,NA,"","","Sao Tome and Principe",0.1864,6.6131,"Sao Tome and Principe",219161
+682,"SA","SAU",682,NA,"","","Saudi Arabia",23.885942,45.079162,"Saudi Arabia",34813867
+686,"SN","SEN",686,NA,"","","Senegal",14.4974,-14.4524,"Senegal",16743930
+688,"RS","SRB",688,NA,"","","Serbia",44.0165,21.0059,"Serbia",8737370
+690,"SC","SYC",690,NA,"","","Seychelles",-4.6796,55.492,"Seychelles",98340
+694,"SL","SLE",694,NA,"","","Sierra Leone",8.460555,-11.779889,"Sierra Leone",7976985
+702,"SG","SGP",702,NA,"","","Singapore",1.2833,103.8333,"Singapore",5850343
+703,"SK","SVK",703,NA,"","","Slovakia",48.669,19.699,"Slovakia",5459643
+704,"VN","VNM",704,NA,"","","Vietnam",14.058324,108.277199,"Vietnam",97338583
+705,"SI","SVN",705,NA,"","","Slovenia",46.1512,14.9955,"Slovenia",2078932
+706,"SO","SOM",706,NA,"","","Somalia",5.152149,46.199616,"Somalia",15893219
+710,"ZA","ZAF",710,NA,"","","South Africa",-30.5595,22.9375,"South Africa",59308690
+716,"ZW","ZWE",716,NA,"","","Zimbabwe",-19.015438,29.154857,"Zimbabwe",14862927
+724,"ES","ESP",724,NA,"","","Spain",40.463667,-3.74922,"Spain",46754783
+728,"SS","SSD",728,NA,"","","South Sudan",6.877,31.307,"South Sudan",11193729
+729,"SD","SDN",729,NA,"","","Sudan",12.8628,30.2176,"Sudan",43849269
+732,"EH","ESH",732,NA,"","","Western Sahara",24.2155,-12.8858,"Western Sahara",597330
+740,"SR","SUR",740,NA,"","","Suriname",3.9193,-56.0278,"Suriname",586634
+748,"SZ","SWZ",748,NA,"","","Eswatini",-26.5225,31.4659,"Eswatini",1160164
+752,"SE","SWE",752,NA,"","","Sweden",60.128161,18.643501,"Sweden",10099270
+756,"CH","CHE",756,NA,"","","Switzerland",46.8182,8.2275,"Switzerland",8654618
+760,"SY","SYR",760,NA,"","","Syria",34.802075,38.996815,"Syria",17500657
+762,"TJ","TJK",762,NA,"","","Tajikistan",38.861,71.2761,"Tajikistan",9537642
+764,"TH","THA",764,NA,"","","Thailand",15.870032,100.992541,"Thailand",69799978
+768,"TG","TGO",768,NA,"","","Togo",8.6195,0.8248,"Togo",8278737
+780,"TT","TTO",780,NA,"","","Trinidad and Tobago",10.6918,-61.2225,"Trinidad and Tobago",1399491
+784,"AE","ARE",784,NA,"","","United Arab Emirates",23.424076,53.847818,"United Arab Emirates",9890400
+788,"TN","TUN",788,NA,"","","Tunisia",33.886917,9.537499,"Tunisia",11818618
+792,"TR","TUR",792,NA,"","","Turkey",38.9637,35.2433,"Turkey",84339067
+796,"TC","TCA",796,NA,"","Turks and Caicos Islands","United Kingdom",21.694,-71.7979,"Turks and Caicos Islands, United Kingdom",38718
+800,"UG","UGA",800,NA,"","","Uganda",1.373333,32.290275,"Uganda",45741000
+804,"UA","UKR",804,NA,"","","Ukraine",48.3794,31.1656,"Ukraine",43733759
+807,"MK","MKD",807,NA,"","","North Macedonia",41.6086,21.7453,"North Macedonia",2083380
+818,"EG","EGY",818,NA,"","","Egypt",26.820553,30.802498,"Egypt",102334403
+826,"GB","GBR",826,NA,"","","United Kingdom",55.3781,-3.436,"United Kingdom",67886004
+833,"IM","IMN",833,NA,"","Isle of Man","United Kingdom",54.2361,-4.5481,"Isle of Man, United Kingdom",85032
+834,"TZ","TZA",834,NA,"","","Tanzania",-6.369028,34.888822,"Tanzania",59734213
+840,"US","USA",840,NA,"","","US",40,-100,"US",329466283
+854,"BF","BFA",854,NA,"","","Burkina Faso",12.2383,-1.5616,"Burkina Faso",20903278
+858,"UY","URY",858,NA,"","","Uruguay",-32.5228,-55.7658,"Uruguay",3473727
+860,"UZ","UZB",860,NA,"","","Uzbekistan",41.377491,64.585262,"Uzbekistan",33469199
+862,"VE","VEN",862,NA,"","","Venezuela",6.4238,-66.5897,"Venezuela",28435943
+887,"YE","YEM",887,NA,"","","Yemen",15.552727,48.516388,"Yemen",29825968
+894,"ZM","ZMB",894,NA,"","","Zambia",-13.133897,27.849332,"Zambia",18383956
+8888,"","",NA,NA,"","","MS Zaandam",0,0,"MS Zaandam",NA
+9999,"","",NA,NA,"","","Diamond Princess",0,0,"Diamond Princess",NA
