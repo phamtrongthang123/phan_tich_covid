@@ -6,7 +6,7 @@ Giờ nhé theo sir cũ là mỗi ngày đều có người die. Ảnh nói nó 
 
 Memoryless
 
-![image-20200711194328355](C:\Users\MyPC\AppData\Roaming\Typora\typora-user-images\image-20200711194328355.png)
+![image-20200715212002357](imgs/seir/image-20200715212002357.png)
 
 > if an event has not occurred after 30 seconds, the [conditional probability](https://en.wikipedia.org/wiki/Conditional_probability) that occurrence will take at least 10 more seconds is equal to the unconditional probability of observing the event more than 10 seconds after the initial time.
 
