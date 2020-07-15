@@ -195,7 +195,7 @@ plot_model <- function(truth, data, param, l, pad = T) {
 }
 
 
-plot_cum_model <- function(truth, data, param, l, pad = T) {
+plot_csum_model <- function(truth, data, param, l, pad = T) {
   if (pad) {
     data <- add_pad(data, l)
   }
@@ -232,9 +232,9 @@ print(mod$value)
 par <- mod$par; par[1:4] <- softplus(par[1:4])
 print(par)
 
-plot_cum_model(data$NewDeaths, data$NewCases, c(mod$par[1], mod$par[2], mod$par[5]), 100)
+plot_csum_model(data$NewDeaths, data$NewCases, c(mod$par[1], mod$par[2], mod$par[5]), 100)
 plot_model    (data$NewDeaths, data$NewCases,  c(mod$par[1], mod$par[2], mod$par[5]), 100)
 
 
-plot_cum_model(data$NewRecovered, data$NewCases, c(mod$par[3], mod$par[4], 1 - mod$par[5]), 100)
+plot_csum_model(data$NewRecovered, data$NewCases, c(mod$par[3], mod$par[4], 1 - mod$par[5]), 100)
 plot_model    (data$NewRecovered, data$NewCases,  c(mod$par[3], mod$par[4], 1 -mod$par[5]), 100)
