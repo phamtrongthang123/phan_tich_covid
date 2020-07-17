@@ -1,0 +1,179 @@
+---
+output:  
+  html_document:
+    keep_md: true
+---
+
+# Death + recover prediction 
+
+```{r}
+source("./rscript/death_pred.r")
+
+plot_negbin_for_country <- function(country){
+  data <- extract_region(covid_data, country)
+
+  #fitting BFGS Nelder-Mead L-BFGS-B CG SANN
+  mod <- fit(method= "BFGS", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = c(7, 1, 37, 2, 0.12))
+  #refine
+  mod <- fit(method= "Nelder-Mead", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = mod$par)
+  
+  par <- mod$par; par[1:4] <- softplus(par[1:4])
+  print(par)
+  
+  plot_cum_model(data$new_deaths, data$NewCases, c(mod$par[1], mod$par[2], mod$par[5]), 100)
+  plot_model    (data$new_deaths, data$NewCases,  c(mod$par[1], mod$par[2], mod$par[5]), 100)
+  
+  
+  plot_cum_model(data$NewRecovered, data$NewCases, c(mod$par[3], mod$par[4], 1 - mod$par[5]), 100)
+  plot_model    (data$NewRecovered, data$NewCases,  c(mod$par[3], mod$par[4], 1 -mod$par[5]), 100)
+}
+
+plot_exp_for_country <- function(country){
+  data <- extract_region(covid_data, country)
+
+  #fitting exp BFGS Nelder-Mead L-BFGS-B CG SANN
+  mod <- fit_exp(method= "BFGS", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = c(7, 37,0.12))
+  #refine
+  mod <- fit_exp(method= "Nelder-Mead", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = mod$par)
+  #final loss
+  print(mod$par)
+  
+  plot_cum_model(data$new_deaths, data$NewCases, c(mod$par[1], log(exp(1)-1), mod$par[3]), 100)
+  plot_model    (data$new_deaths, data$NewCases,  c(mod$par[1], log(exp(1)-1), mod$par[3]), 100)
+  
+  
+  plot_cum_model(data$NewRecovered, data$NewCases, c(mod$par[2], log(exp(1)-1), 1 - mod$par[3]), 100)
+  plot_model    (data$NewRecovered, data$NewCases,  c(mod$par[2], log(exp(1)-1), 1 -mod$par[3]), 100)
+}
+
+```
+
+Thử plot với Mĩ, plot recover cho ra kết quả đẹp. 
+```{r}
+country = "US"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+
+```
+
+Tiếp theo là thử các nước khác
+```{r}
+country = "Vietnam"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+
+```
+
+```{r}
+country = "Japan"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+
+```
+
+Ý đẹp nhất. 
+```{r}
+country = "Italy"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+
+```
+
+Nhận xét chung là exp plot xấu hơn neg bin. Thử tiếp mấy nước.
+
+```{r}
+country = "Korea, South"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+```
+
+Tới vẽ Hàn Quốc thì thấy exp yếu hơn thấy rõ. Neg bin fit tốt hơn.
+
+```{r}
+country = "Malaysia"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+```
+
+```{r}
+country = "Russia"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+```
+
+```{r}
+country = "Germany"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+```
+
+```{r}
+country = "Taiwan*"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+```
+
+```{r}
+country = "Canada"
+plot_negbin_for_country(country)
+plot_exp_for_country(country)
+```
+
+Từ giờ chỉ plot neg bin, dựa vào https://ourworldindata.org/covid-cases và chọn những nước thuộc top số cases để vẽ. 
+
+```{r}
+country = "Brazil"
+plot_negbin_for_country(country)
+```
+
+```{r}
+country = "India"
+plot_negbin_for_country(country)
+```
+
+```{r}
+country = "Peru"
+plot_negbin_for_country(country)
+```
+
+```{r}
+country = "Chile"
+plot_negbin_for_country(country)
+```
+
+Nhìn số liệu death với recov như là Chile với brazil chờ 1 ngày rồi tống hết vô data vậy. 
+
+```{r}
+country = "Mexico"
+plot_negbin_for_country(country)
+```
+
+Mexico coi vậy mà ổn
+
+```{r}
+country = "Spain"
+plot_negbin_for_country(country)
+```
+
+```{r}
+country = "United Kingdom"
+plot_negbin_for_country(country)
+```
+Có ô bị thiếu giá trị à... Để check sau. Mà sao trong dữ liệu của UK lại có giá trị âm ở new cases thế nhỉ. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

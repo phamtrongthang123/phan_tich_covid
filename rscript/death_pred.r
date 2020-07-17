@@ -49,7 +49,7 @@ residue <- function(truth, pad_data, pdf) {
 
 loss2 <- function(truth, pad_data, pdf) {
   l <- (norm(residue(truth, pad_data, pdf), type="2"))
-  #print(l)
+  ##print(l)
   return(l)
 }
 
@@ -63,19 +63,19 @@ loss <- function(truth, pad_data, pdf) {
 
 loss2 <- function(truth, pad_data, pdf) {
   l <- (mean(cumsum(residue(truth, pad_data, pdf))^2/(abs(truth)+1)))
-  print(l)
+  #print(l)
   return(l)
 }
 
 
 loss2 <- function(truth, pad_data, pdf) {
   l <- (mean(cumsum(residue(truth, pad_data, pdf))^2/(abs(cumsum(truth))+1)))
-  print(l)
+  #print(l)
   return(l)
 }
 
 softplus <- function(x) {
-  ifelse(x > 20, x, log1p(1+exp(x)))
+  ifelse(x > 20, x, log1p(exp(x)))
 }
 
 
@@ -85,6 +85,7 @@ softplus_d <- function(x) {
 
 pdf_param <-function(param,l) {
   param[1:2] <- softplus(param[1:2])
+  #print(param)
   x <- 0:l
   size <- param[2]
   mu <- param[1]
@@ -156,12 +157,12 @@ fit <- function(truth, data, l,init = c(7, 1, 30, 1, 0.12), pad = T, method = "C
   fn <-  function(param) {
     l <- eval(truth$deaths, data, c(param[1],param[2], param[5]))/s1 +
       eval(truth$recovered, data, c(param[3],param[4], 1 - param[5]))/s2
-    print(l)
+    #print(l)
     l
   }
   
   gr <-  function(param) {
-    #print(param)
+    ##print(param)
     gd <- grad(truth$deaths, data, c(param[1],param[2], param[5])) / s1
     gr <-grad(truth$recovered, data, c(param[3],param[4], 1 - param[5])) / s2
     res <- c  (
@@ -171,7 +172,7 @@ fit <- function(truth, data, l,init = c(7, 1, 30, 1, 0.12), pad = T, method = "C
       gr[2],
       gd[3]-gr[3]
     )
-    print(res)
+    #print(res)
     res
   } 
   
@@ -179,6 +180,62 @@ fit <- function(truth, data, l,init = c(7, 1, 30, 1, 0.12), pad = T, method = "C
     grad_descend(init, fn, gr, 0.01)
   } else {
    optim(init, fn = fn, gr = gr, method = method)
+  }
+}
+
+fit_exp <- function(truth, data, l,init = c(7, 30, 0.12), pad = T, method = "CG") {
+  if (pad) {
+    data <- add_pad(data, l)
+  }
+  
+  eval <- function(truth, pad_data, param){
+    loss(truth, data, pdf_param(param, l))
+  }
+  
+  loss_grad_norm <- function(pad_data, pdf_grad) {
+    2 * cumsum(pred(pad_data,pdf_grad))
+  }
+  
+  grad <- function(truth, pad_data, param){
+    pdf <- pdf_param(param, l)
+    res <- cumsum(residue(truth, pad_data, pdf))
+    loss <- norm(res, type="2")
+    res <- res / (2 * loss)
+    
+    pdf_grad <- pdf_grad_param(param, l)
+    c(
+      loss_grad_norm(pad_data, pdf_grad[[1]]) %*%res,
+      loss_grad_norm(pad_data, pdf_grad[[3]]) %*%res
+    )
+  }
+  
+  s1 <- sum(truth$deaths) + 1
+  s2 <- sum(truth$recovered) + 1
+  
+  fn <-  function(param) {
+    l <- eval(truth$deaths, data, c(param[1],log(exp(1)-1), param[3]))/s1 +
+      eval(truth$recovered, data, c(param[2],log(exp(1)-1), 1 - param[3]))/s2
+    ##print(l)
+    l
+  }
+  
+  gr <-  function(param) {
+    ##print(param)
+    gd <- grad(truth$deaths, data, c(param[1], log(exp(1)-1), param[3])) / s1
+    gr <-grad(truth$recovered, data, c(param[2], log(exp(1)-1), 1 - param[3])) / s2
+    res <- c  (
+      gd[1],
+      gr[1],
+      gd[2]-gr[2]
+    )
+    ##print(res)
+    res
+  } 
+  
+  if (method == "GD") {
+    grad_descend(init, fn, gr, 0.01)
+  } else {
+    optim(init, fn = fn, gr = gr, method = method)
   }
 }
 
@@ -195,7 +252,7 @@ plot_model <- function(truth, data, param, l, pad = T) {
 }
 
 
-plot_csum_model <- function(truth, data, param, l, pad = T) {
+plot_cum_model <- function(truth, data, param, l, pad = T) {
   if (pad) {
     data <- add_pad(data, l)
   }
@@ -217,24 +274,38 @@ grad_descend <- function(param, fn, grad, lr) {
   param
 }
 
-country = "US"
-data <- extract_region(covid_data, country)
+# country = "Italy"
+# data <- extract_region(covid_data, country)
+# 
+# ggplot(data, aes(x = date)) + geom_line(aes(y=new_cases), color = "blue", size = 1) + geom_line(aes(y=new_deaths), color = "red", size = 1) + geom_line(aes(y=NewRecovered), color = "green", size = 1)
+# 
+# #fitting BFGS Nelder-Mead L-BFGS-B CG SANN
+# mod <- fit(method= "BFGS", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = c(7, 1, 37, 2, 0.12))
+# #refine
+# mod <- fit(method= "Nelder-Mead", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = mod$par)
+# 
+# par <- mod$par; par[1:4] <- softplus(par[1:4])
+# #print(par)
+# 
+# plot_cum_model(data$new_deaths, data$NewCases, c(mod$par[1], mod$par[2], mod$par[5]), 100)
+# plot_model    (data$new_deaths, data$NewCases,  c(mod$par[1], mod$par[2], mod$par[5]), 100)
+# 
+# 
+# plot_cum_model(data$NewRecovered, data$NewCases, c(mod$par[3], mod$par[4], 1 - mod$par[5]), 100)
+# plot_model    (data$NewRecovered, data$NewCases,  c(mod$par[3], mod$par[4], 1 -mod$par[5]), 100)
+# 
+# 
+# #fitting exp BFGS Nelder-Mead L-BFGS-B CG SANN
+# mod <- fit_exp(method= "BFGS", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = c(7, 37,0.12))
+# #refine
+# mod <- fit_exp(method= "Nelder-Mead", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = mod$par)
+# #final loss
+# #print(mod$par)
+# 
+# plot_cum_model(data$new_deaths, data$NewCases, c(mod$par[1], log(exp(1)-1), mod$par[3]), 100)
+# plot_model    (data$new_deaths, data$NewCases,  c(mod$par[1], log(exp(1)-1), mod$par[3]), 100)
+# 
+# 
+# plot_cum_model(data$NewRecovered, data$NewCases, c(mod$par[2], log(exp(1)-1), 1 - mod$par[3]), 100)
+# plot_model    (data$NewRecovered, data$NewCases,  c(mod$par[2], log(exp(1)-1), 1 -mod$par[3]), 100)
 
-ggplot(data, aes(x = date)) + geom_line(aes(y=new_cases), color = "blue", size = 1) + geom_line(aes(y=new_deaths), color = "red", size = 1) + geom_line(aes(y=NewRecovered), color = "green", size = 1)
-
-#fitting BFGS Nelder-Mead L-BFGS-B CG SANN
-mod <- fit(method= "BFGS", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = c(7, 1, 37, 2, 0.12))
-#refine
-mod <- fit(method= "Nelder-Mead", list(deaths = data$new_deaths, recovered = data$NewRecovered), data$new_cases, 100, init = mod$par)
-#final loss
-print(mod$value)
-
-par <- mod$par; par[1:4] <- softplus(par[1:4])
-print(par)
-
-plot_csum_model(data$NewDeaths, data$NewCases, c(mod$par[1], mod$par[2], mod$par[5]), 100)
-plot_model    (data$NewDeaths, data$NewCases,  c(mod$par[1], mod$par[2], mod$par[5]), 100)
-
-
-plot_csum_model(data$NewRecovered, data$NewCases, c(mod$par[3], mod$par[4], 1 - mod$par[5]), 100)
-plot_model    (data$NewRecovered, data$NewCases,  c(mod$par[3], mod$par[4], 1 -mod$par[5]), 100)

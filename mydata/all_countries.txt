@@ -1,0 +1,213 @@
+Afghanistan
+Albania
+Algeria
+Andorra
+Antigua and Barbuda
+Angola
+Anguilla, United Kingdom
+Argentina
+Armenia
+Aruba, Netherlands
+Australia
+Austria
+Azerbaijan
+Bahamas
+Bahrain
+Bangladesh
+Barbados
+Belarus
+Belgium
+Belize
+Benin
+Bermuda, United Kingdom
+Bhutan
+Bolivia
+Bonaire, Sint Eustatius and Saba, Netherlands
+Bosnia and Herzegovina
+Botswana
+Brazil
+British Virgin Islands, United Kingdom
+Brunei
+Bulgaria
+Burkina Faso
+Burma
+Burundi
+Cabo Verde
+Cambodia
+Cameroon
+Canada
+Cayman Islands, United Kingdom
+Central African Republic
+Colombia
+Comoros
+Congo (Brazzaville)
+Congo (Kinshasa)
+Costa Rica
+Cote d'Ivoire
+Croatia
+Cuba
+Curacao, Netherlands
+Cyprus
+Czechia
+Chad
+Chile
+China
+Denmark
+Diamond Princess
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Estonia
+Eswatini
+Ethiopia
+Falkland Islands (Malvinas), United Kingdom
+Faroe Islands, Denmark
+Fiji
+Finland
+France
+French Guiana, France
+French Polynesia, France
+Gabon
+Gambia
+Georgia
+Germany
+Ghana
+Greece
+Greenland, Denmark
+Grenada
+Guadeloupe, France
+Guatemala
+Guinea
+Guinea-Bissau
+Guyana
+Gibraltar, United Kingdom
+Haiti
+Holy See
+Honduras
+Hungary
+Iceland
+India
+Indonesia
+Iran
+Iraq
+Ireland
+Isle of Man, United Kingdom
+Israel
+Italy
+Jamaica
+Japan
+Jordan
+Kazakhstan
+Kenya
+Korea, South
+Kosovo
+Kuwait
+Kyrgyzstan
+Laos
+Latvia
+Lebanon
+Lesotho
+Liberia
+Libya
+Liechtenstein
+Lithuania
+Luxembourg
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Martinique, France
+Mauritania
+Mauritius
+Mayotte, France
+Mexico
+Moldova
+Monaco
+Montenegro
+Montserrat, United Kingdom
+Mongolia
+Morocco
+Mozambique
+MS Zaandam
+Namibia
+Nepal
+Netherlands
+New Caledonia, France
+New Zealand
+Nicaragua
+Niger
+Nigeria
+North Macedonia
+Norway
+Oman
+Pakistan
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Poland
+Portugal
+Philippines
+Qatar
+Reunion, France
+Romania
+Russia
+Rwanda
+Saint Barthelemy, France
+Saint Kitts and Nevis
+Saint Lucia
+Saint Pierre and Miquelon, France
+Saint Vincent and the Grenadines
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Sint Maarten, Netherlands
+Singapore
+Slovakia
+Slovenia
+Somalia
+South Africa
+South Sudan
+Spain
+Sri Lanka
+St Martin, France
+Sudan
+Suriname
+Sweden
+Switzerland
+Syria
+Taiwan*
+Tajikistan
+Tanzania
+Timor-Leste
+Togo
+Tunisia
+Turkey
+Turks and Caicos Islands, United Kingdom
+Thailand
+Trinidad and Tobago
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+Uruguay
+US
+Uzbekistan
+Venezuela
+Vietnam
+West Bank and Gaza
+Western Sahara
+Yemen
+Zambia
+Zimbabwe
